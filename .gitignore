@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Environment / secrets
+.env
+backend/.env
+
+# Email data (privacy: never commit real emails)
+data/
+!data/.gitkeep
+
+# Evaluation artifacts (contain real email ids / subjects)
+eval/
+
+# Qdrant local storage (Docker volume)
+qdrant_storage/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*.log
+
+# Model cache
+.cache/
