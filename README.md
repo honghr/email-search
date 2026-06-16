@@ -55,7 +55,7 @@ flowchart TB
 
 | Stage | Responsibility | Component |
 |-------|----------------|-----------|
-| 1. Query understanding | Split semantic text from date/sender filters | Azure OpenAI chat model |
+| 1. Query understanding | Split semantic text from date/sender filters | Azure OpenAI `gpt-5.4-mini` |
 | 2. Embed query | Dense vector + BM25 sparse vector | Azure `text-embedding-3-large` (3072-dim) + FastEmbed `Qdrant/bm25` |
 | 3. Recall + filter | Hybrid dense/sparse search, RRF fusion, pushed-down filters | Qdrant |
 | 4. Rerank | Re-score the candidate pool precisely | Cohere rerank on Azure (local cross-encoder fallback) |
@@ -219,7 +219,7 @@ All settings live in `backend/.env` (git-ignored); see
 AZURE_OPENAI_ENDPOINT=https://<resource>.services.ai.azure.com/openai/v1
 AZURE_OPENAI_API_KEY=...
 AZURE_EMBED_DEPLOYMENT=text-embedding-3-large
-AZURE_CHAT_DEPLOYMENT=gpt-4.1-mini
+AZURE_CHAT_DEPLOYMENT=gpt-5.4-mini
 
 COHERE_RERANK_URL=https://<resource>.services.ai.azure.com/providers/cohere/v2/rerank
 COHERE_RERANK_DEPLOYMENT=Cohere-rerank-v4.0-fast
